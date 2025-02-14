@@ -87,6 +87,8 @@ btns.forEach((btn) => {
 
             guessTheColor.style.color = '#47fd10';
             point += 5;
+
+           
         } else {
             guessTheColor.innerText = 'Incorrect guess!';
             guessTheColor.style.color = 'red';
@@ -105,18 +107,54 @@ btns.forEach((btn) => {
                 point -= 5;
             }
         }
+
+        if(point === 50) {
+            openModal();
+        }
         scores.innerText = 'score: ' + point;
     });
 });
 
-// Reset button 
 reset.addEventListener('click', function() {
     clearInterval(intervalId);
     point = 0;
     scores.innerText = 'Score: 0';
     guessTheColor.innerText = 'Guess the color!';
-    updateCards(); // Reset button colors
-    startInterval(); // Restart interval
-    animateButtons(); // Reapply the animation to buttons
+    updateCards();
+    startInterval(); 
+    animateButtons(); 
     console.log('Game reset!');
 });
+
+
+ function openModal() {
+    document.querySelector(".modal").style.display = 'flex';
+}
+
+document.querySelector('.mega').addEventListener('click', function(){
+    openModal();
+
+    if(openModal){
+        alert('modal is open ')
+    }
+})
+
+document.addEventListener('DOMContentLoaded', function(){
+    if(openModal){
+        document.querySelector('.modal').style.display = 'none';
+    }
+
+})
+
+
+document.querySelector('#continue').addEventListener('click', function(){
+    document.querySelector('.modal').classList.add('modal-out')
+})
+
+
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+openModal();
+window.closeModal = closeModal;

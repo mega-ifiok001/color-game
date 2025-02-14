@@ -392,7 +392,7 @@ button {
     transition: opacity 0.3s;
 }
 
-.fancy-button:hover::after {
+.reset:hover::after {
     opacity: 1;
 }
 .reset:active {
@@ -434,4 +434,134 @@ button {
         width: 100%;
         margin-bottom: .3rem;
     }
+}
+
+
+
+
+
+
+.shapes-contain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index:999;
+}
+
+.shapes {
+    position: absolute;
+    top: -50px; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: fall linear infinite;
+    z-index:1003!important;
+}
+
+.shapes:nth-child(1) { left: 10%; animation-duration: 3s; background-color: #FF5733; }
+.shapes:nth-child(2) { left: 20%; animation-duration: 4s; background-color: #33FF57; }
+.shapes:nth-child(3) { left: 30%; animation-duration: 2.5s; background-color: #3357FF; }
+.shapes:nth-child(4) { left: 40%; animation-duration: 3.5s; background-color: #FF33A1; }
+.shapes:nth-child(5) { left: 50%; animation-duration: 4.5s; background-color: #33FFF0; }
+.shapes:nth-child(6) { left: 60%; animation-duration: 3.2s; background-color: #FF8F33; }
+.shapes:nth-child(7) { left: 70%; animation-duration: 2.8s; background-color: #8F33FF; }
+.shapes:nth-child(8) { left: 80%; animation-duration: 4.2s; background-color: #33FFA3; }
+.shapes:nth-child(9) { left: 90%; animation-duration: 3.8s; background-color: #FF5733; }
+.shapes:nth-child(10) { left: 15%; animation-duration: 3.1s; background-color: #FF33FF; }
+.shapes:nth-child(11) { left: 25%; animation-duration: 4.1s; background-color: #33FF57; }
+.shapes:nth-child(12) { left: 35%; animation-duration: 2.6s; background-color: #3357FF; }
+.shapes:nth-child(13) { left: 45%; animation-duration: 3.6s; background-color: #FF33A1; }
+.shapes:nth-child(14) { left: 55%; animation-duration: 4.6s; background-color: #33FFF0; }
+.shapes:nth-child(15) { left: 65%; animation-duration: 3.3s; background-color: #FF8F33; }
+.shapes:nth-child(16) { left: 75%; animation-duration: 2.9s; background-color: #8F33FF; }
+.shapes:nth-child(17) { left: 85%; animation-duration: 4.3s; background-color: #33FFA3; }
+.shapes:nth-child(18) { left: 95%; animation-duration: 3.9s; background-color: #FF5733; }
+.shapes:nth-child(19) { left: 5%; animation-duration: 3.5s; background-color: #FF33FF; }
+.shapes:nth-child(20) { left: 12%; animation-duration: 4.5s; background-color: #33FF57; }
+.shapes:nth-child(21) { left: 22%; animation-duration: 2.7s; background-color: #3357FF; }
+.shapes:nth-child(22) { left: 32%; animation-duration: 4.0s; background-color: #FF33A1; }
+.shapes:nth-child(23) { left: 42%; animation-duration: 3.4s; background-color: #33FFF0; }
+.shapes:nth-child(24) { left: 52%; animation-duration: 4.7s; background-color: #FF8F33; }
+.shapes:nth-child(25) { left: 62%; animation-duration: 3.1s; background-color: #8F33FF; }
+.shapes:nth-child(26) { left: 72%; animation-duration: 3.9s; background-color: #33FFA3; }
+.shapes:nth-child(27) { left: 82%; animation-duration: 3.3s; background-color: #FF5733; }
+.shapes:nth-child(28) { left: 92%; animation-duration: 4.8s; background-color: #FF33FF; }
+.shapes:nth-child(29) { left: 18%; animation-duration: 2.8s; background-color: #33FF57; }
+.shapes:nth-child(30) { left: 28%; animation-duration: 4.1s; background-color: #3357FF; }
+.shapes:nth-child(31) { left: 38%; animation-duration: 3.6s; background-color: #FF33A1; }
+
+@keyframes fall {
+    0% { top: -50px; opacity: 1; }
+    100% { top: 100vh; opacity: 0; }
+}
+
+
+
+
+
+.modal {
+    display:none; 
+    position: fixed;
+    z-index: 1005; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    align-items: center; 
+    justify-content: center;
+}
+
+
+.modal-content {
+    font-size:1.3rem;
+    font-family: poppin;
+    border-radius:1rem;
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; 
+    text-align: center;
+    animation: scaler 0.5s ease alternate;
+}
+
+
+@keyframes scaler{
+    0%{transform: scale(0.3)}
+    50%{transform:scale(0.7)}
+    100%{
+        transform:scale(1)
+    }
+}
+
+.modal-out {
+    animation: outbox 0.6s ease forwards;
+}
+
+@keyframes outbox {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
