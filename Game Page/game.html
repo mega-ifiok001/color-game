@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Game</title>
+    <link rel="stylesheet" href="./game.css">
+</head>
+ 
+<body>
+  <main>
+    <div class="overlay"></div>
+    <!-- this is the wrapper -->
+    <div class="wrapper">
+        <!-- this is the hero section -->
+        <section>
+            <div class="hero-section">
+                <h1 class="gameInstructions">Guess The Correct Color!</h1>
+                <div class="scoreBox" data-testid="score">
+                    <h3 id="scores">Score: 0</h3>
+                </div>
+                <div class="selectedColor"><button id="selectedbtn" data-testid="colorBox"></button></div>
+                <div class="color-container" data-testid="colorOption">
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                </div>
+                <p class="guessTheColor" data-testid="gameStatus">Guess The Right Color!</p>
+                <button class="reset" data-testid="newGameButton">Reset Game</button>
+
+            </div>
+
+
+        </section>
+        <!-- hero section ends -->
+    </div>
+    <!-- wrapper ends -->
+  </main>
+    <script src="./game.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
